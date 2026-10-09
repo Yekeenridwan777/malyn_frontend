@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Minista of Enjoyment Hotel</title>
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png"/>
-  <style>
+ <style>
     * {
       margin: 0;
       padding: 0;
@@ -13,131 +13,139 @@
     }
 
     body {
-  font-family: "Poppins", sans-serif;
-  background: url("img/HOBM5380.JPG") no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  overflow-x: hidden;
-  position: relative;
-}
+      font-family: "Poppins", sans-serif;
+      /* Make sure the path matches your exact image file name in the img folder */
+      background: url("img/canlounge.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(
-    rgba(11, 13, 23, 0.88),
-    rgba(11, 13, 23, 0.82)
-  );
-  z-index: -1;
-}
+    /* Adjusted semi-transparent dark overlay so the background picture is clearly visible */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 13, 23, 0.45); 
+      z-index: -1;
+    }
 
     /* 🌟 Navbar */
-  .nav-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .nav-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.logo img {
-  height: 90px;
-  width: auto;
-  transition: transform 0.3s ease;
-}
+    .logo img {
+      height: 60px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
 
-.logo img:hover {
-  transform: scale(1.05);
-}
+    .logo img:hover {
+      transform: scale(1.05);
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
 
-nav ul li a:hover {
-  color: #d4af37;
-}
+    nav ul li a:hover {
+      color: #c86d44;
+      transform: translateY(-2px);
+    }
 
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-.hamburger div {
-  width: 28px;
-  height: 3px;
-  background: white;
-  margin: 4px;
-  border-radius: 2px;
-}
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: #ffffff;
+      margin: 4px;
+      border-radius: 2px;
+    }
 
     /* ✨ Header */
     header {
-  text-align: center;
-  padding: 60px 20px 40px;
-  color: white;
-  background: transparent;
-}
+      text-align: center;
+      padding: 60px 20px 20px;
+      color: #ffffff;
+      background: transparent;
+    }
+
     header h1 {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 700;
       margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
+
     header p {
       font-size: 16px;
-      color: #f1f1f1;
+      color: #f0f0f0;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.5);
     }
 
     /* 💬 Contact Section */
     .contact-container {
-  max-width: 650px;
-  background: rgba(255,255,255,0.96);
-  margin: 40px auto;
-  padding: 40px;
-  border-radius: 16px;
-  border-top: 4px solid #d4af37;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  animation: slideUp 0.9s ease;
-}
+      max-width: 650px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      margin: 30px auto;
+      padding: 40px;
+      border-radius: 16px;
+      border-top: 4px solid #c86d44;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      animation: slideUp 0.9s ease;
+    }
 
-   .contact-container h2 {
-  text-align: center;
-  color: #0b0d17;
-  margin-bottom: 25px;
-  font-size: 24px;
-}
+    .contact-container h2 {
+      text-align: center;
+      color: #1a1a1a;
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
 
-form input,
-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 12px 0;
-  border: 1px solid #d4af37;
-  border-radius: 10px;
-  font-size: 15px;
-  transition: all 0.3s;
-}
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 12px 0;
+      border: 1px solid #e8ded2;
+      border-radius: 10px;
+      background: #fcfaf7;
+      color: #222222;
+      font-size: 15px;
+      transition: all 0.3s;
+    }
 
-form input:focus,
-form textarea:focus {
-  border-color: #d4af37;
-  box-shadow: 0 0 8px rgba(212,175,55,0.3);
-  outline: none;
-}
+    form input:focus,
+    form textarea:focus {
+      border-color: #c86d44;
+      box-shadow: 0 0 8px rgba(200, 109, 68, 0.25);
+      outline: none;
+    }
 
     form textarea {
       min-height: 130px;
@@ -145,102 +153,113 @@ form textarea:focus {
     }
 
     form button {
-  width: 100%;
-  padding: 13px;
-  background: #d4af37;
-  color: #0b0d17;
-  border: none;
-  border-radius: 10px;
-  font-size: 17px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+      width: 100%;
+      padding: 14px;
+      background: #c86d44;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-form button:hover {
-  background: #c9a227;
-  transform: scale(1.03);
-}
-
+    form button:hover {
+      background: #ad542c;
+      transform: scale(1.02);
+    }
 
     .message {
       text-align: center;
       margin-top: 12px;
       font-size: 15px;
       font-weight: 500;
+      color: #1a1a1a;
     }
 
     /* 📍 Map Section */
-#map {
-  padding: 60px 20px;
-  background: transparent;
-  text-align: center;
-}
+    #map {
+      padding: 50px 20px;
+      background: transparent;
+      text-align: center;
+    }
 
-#map h2 {
-  color: #d4af37;
-}
+    #map h2 {
+      color: #ffffff;
+      font-size: 28px;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
 
-#map p {
-  color: #ccc;
-}
+    #map p {
+      color: #e0e0e0;
+      margin-bottom: 20px;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    }
+
     iframe {
       border-radius: 12px;
       width: 100%;
       max-width: 800px;
       height: 350px;
-      border: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     }
 
     /* 🦶 Footer */
- footer {
-  background: #0b0d17;
-  color: white;
-  text-align: center;
-  padding: 25px 10px;
-  margin-top: 50px;
-}
+    footer {
+      background: rgba(11, 13, 23, 0.95);
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 50px;
+      border-top: 2px solid #c86d44;
+    }
 
-footer a {
-  color: #d4af37;
-  text-decoration: none;
-  font-weight: 500;
-}
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      color: #c86d44;
+    }
 
     /* 📱 Responsive */
-   @media (max-width: 768px) {
+    @media (max-width: 768px) {
+      .logo img {
+        height: 60px;
+      }
 
-  .logo img {
-    height: 60px;
-  }
+      .hamburger {
+        display: flex;
+      }
 
-  .hamburger {
-    display: flex;
-  }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 20px;
+        top: 90px;
+        width: 220px;
+        background: rgba(11, 13, 23, 0.95);
+        border-radius: 8px;
+        padding: 15px 0;
+        z-index: 1000;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-  nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    right: 20px;
-    top: 90px;
-    width: 220px;
-    background: rgba(11,13,23,0.95);
-    border-radius: 8px;
-    padding: 15px 0;
-    z-index: 1000;
-  }
+      nav ul.show {
+        display: flex;
+      }
 
-  nav ul.show {
-    display: flex;
-  }
-
-  .contact-container {
-    margin: 20px;
-    padding: 25px;
-  }
-}
+      .contact-container {
+        margin: 20px;
+        padding: 25px;
+      }
+    }
 
     /* ✨ Animations */
     @keyframes fadeIn {
@@ -251,14 +270,14 @@ footer a {
       from { opacity: 0; transform: translateY(50px); }
       to { opacity: 1; transform: translateY(0); }
     }
-  </style>
+</style>
 </head>
 <body>
 <nav>
 <div class="nav-container">
  
 <div class="logo">
-  <img src="img/QHTZ5397.png" alt="Minista of Enjoyment Logo">
+  <img src="img/logo-removebg-preview.png" alt="Minista of Enjoyment Logo">
 </div>
  
 <ul id="nav-links">
@@ -337,48 +356,67 @@ footer a {
   </footer>
 
   <script>
-    const form = document.getElementById("contactForm");
-    const msg = document.getElementById("contactMsg");
+  /* --- 1. Contact Form Submission Handler --- */
+  const form = document.getElementById("contactForm");
+  const msg = document.getElementById("contactMsg");
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      msg.textContent = "⏳ Sending...";
-      msg.style.color = "black";
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msg.textContent = "⏳ Sending...";
+    msg.style.color = "#1a1a1a";
 
-      const data = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value,
-      };
+    const data = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+    };
 
-      try {
-        const res = await fetch("https://hotel-booking-oujg.onrender.com/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
+    try {
+      const res = await fetch("https://malyn-hotel-api.onrender.com/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
 
-        const result = await res.json();
+      const result = await res.json();
 
-        if (result.success) {
-          msg.textContent = "✅ Message sent successfully!";
-          msg.style.color = "green";
-          form.reset();
-        } else {
-          msg.textContent = "❌ Failed to send message.";
-          msg.style.color = "red";
-        }
-      } catch (error) {
-        msg.textContent = "⚠ Server error. Try again later.";
-        msg.style.color = "red";
+      if (result.success) {
+        msg.textContent = "✅ Message sent successfully!";
+        msg.style.color = "#2e7d32";
+        form.reset();
+      } else {
+        msg.textContent = "❌ Failed to send message.";
+        msg.style.color = "#d32f2f";
       }
+    } catch (error) {
+      msg.textContent = "⚠ Server error. Try again later.";
+      msg.style.color = "#d32f2f";
+    }
+  });
+
+  /* --- 2. Mobile Menu Navigation Logic --- */
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.toggle("show");
+    hamburger.setAttribute("aria-expanded", isOpen);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove("show");
+      hamburger.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      hamburger.setAttribute("aria-expanded", "false");
     });
-    const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
- 
-hamburger.addEventListener("click", () => {
-navLinks.classList.toggle("show");
-});
-  </script>
+  });
+</script>
 </body>
 </html>

@@ -3,14 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Rooms - Minista of Enjoyment Hotel</title>
+    <title>Our Rooms - Malyn Hotel and Lounge</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png"/>
-  <style>
-    nav {
-    display: flex;
-    align-items: center;
-  }
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      line-height: 1.6;
+      color: #2b2b2b;
+      background-color: #fcfaf7; /* Clean warm ivory background */
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Navbar */
+    header {
+      background: rgba(252, 250, 247, 0.92); /* Clean translucent light header */
+      backdrop-filter: blur(8px);
+      color: #1a1a1a;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid #e8ded2;
+      animation: fadeDown 1s ease-in-out;
+    }
+
     .nav-container {
       width: 100%;
       max-width: 1200px;
@@ -19,80 +49,62 @@
       justify-content: space-between;
       align-items: center;
     }
-  nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-  }
-  nav ul li {
-      display: block;
-  }
-  nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-  }
-  nav ul li a:hover {
-  color: #d4af37;
-  }
 
-    body {
-      font-family: "Poppins", sans-serif;
-      background: url("img/HOBM5380.JPG") no-repeat center center fixed;
-      background-size: cover;
+    .logo img {
+      height: 60px; 
+      width: auto;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      opacity: 0.95;
+      filter: brightness(0); /* Changes logo to pure black */
+    }
+
+    .logo img:hover { 
+      transform: scale(1.05); 
+      opacity: 1;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
       margin: 0;
       padding: 0;
-      overflow-x: hidden;
-      position: relative;
     }
 
-    /* Overlay for blur effect */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      rgba(11, 13, 23, 0.88),
-      rgba(11, 13, 23, 0.82)
-    );
-    z-index: -1;
-  }
-    /* Navbar */
-    header {
-    background: rgba(11, 13, 23, 0.75);
-    backdrop-filter: blur(8px);
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  }
-    header h1 {
-      margin: 0;
-      font-size: 20px;
-      color: white;
-      animation: fadeInDown 1s ease;
+    nav ul li {
+      display: block;
     }
-    nav a {
-      color: white;
+
+    nav ul li a {
+      color: #333333;
       text-decoration: none;
-      margin: 0 10px;
-      font-size: 15px;
-      transition: color 0.3s;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
     }
-    nav a:hover {
-      color: #d4af37;
+
+    nav ul li a:hover {
+      color: #c86d44; /* Terracotta copper hover */
+      transform: translateY(-2px);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: #1a1a1a;
+      margin: 4px;
+      border-radius: 2px;
+      transition: 0.4s;
     }
 
     /* Rooms grid */
@@ -101,21 +113,22 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
       padding: 40px 30px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .room-card {
-    background: rgba(255, 255, 255, 0.97);
-    border-radius: 14px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid #e8ded2;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
     .room-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
     .room-card img {
@@ -135,43 +148,44 @@
     }
 
     .room-info h2 {
-    margin: 0 0 10px;
-    font-size: 20px;
-    color: #0b0d17;
-  }
+      margin: 0 0 10px;
+      font-size: 20px;
+      color: #1a1a1a;
+    }
 
     .room-info p {
-      color: #555;
+      color: #555555;
       font-size: 15px;
       margin: 0 0 15px;
       line-height: 1.6;
     }
-.price {
-  color: #d4af37;
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin: 12px 0;
-  text-align: center;
-}
+
+    .price {
+      color: #c86d44;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 12px 0;
+      text-align: center;
+    }
 
     .room-info button {
-    width: 100%;
-    padding: 12px;
-    background: #d4af37 ;
-    color: #0b0d17 !important;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 600;
-  }
+      width: 100%;
+      padding: 12px;
+      background: #c86d44;
+      color: #ffffff !important;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
 
-
-  .room-info button:hover {
-    background: #c9a227;
-    transform: scale(1.02);
-  }
+    .room-info button:hover {
+      background: #ad542c;
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(200, 109, 68, 0.3);
+    }
 
     /* Booking modal */
     .modal {
@@ -182,63 +196,66 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.5);
       justify-content: center;
       align-items: center;
       animation: fadeIn 0.3s ease;
     }
 
-  .modal-content {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 14px;
-    width: 400px;
-    max-width: 90%;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    animation: slideUp 0.4s ease;
-    border-top: 4px solid #d4af37;
-  }
+    .modal-content {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 14px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      animation: slideUp 0.4s ease;
+      border-top: 4px solid #c86d44;
+    }
 
     .modal-content h3 {
-    margin-top: 0;
-    text-align: center;
-    color: #0b0d17;
-    font-size: 20px;
-  }
+      margin-top: 0;
+      text-align: center;
+      color: #1a1a1a;
+      font-size: 20px;
+    }
 
     .modal-content input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #d4af37;
-    border-radius: 8px;
-    font-size: 15px;
-    outline: none;
-    box-sizing: border-box;
-  }
-  .modal-content input:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
-  }
-  .modal-content button {
-    width: 100%;
-    padding: 12px;
-    background: #d4af37;
-    color: #0b0d17;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: all 0.3s ease;
-  }
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #e8ded2;
+      border-radius: 8px;
+      font-size: 15px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .modal-content input:focus {
+      border-color: #c86d44;
+      box-shadow: 0 0 8px rgba(200, 109, 68, 0.2);
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 12px;
+      background: #c86d44;
+      color: #ffffff;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+
     .modal-content button:hover {
-    background: #c9a227;
-    transform: scale(1.02);
-  }
+      background: #ad542c;
+      transform: scale(1.02);
+    }
 
     .close-btn {
-      background: #777;
+      background: #777777;
     }
 
     .message {
@@ -248,17 +265,20 @@
     }
 
     /* Footer */
-  footer {
-    background: #0b0d17;
-    color: white;
-    text-align: center;
-    padding: 25px 10px;
-    margin-top: 40px;
-  }
+    footer {
+      background: #1a1615; /* Charcoal black footer matching index.html */
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      margin-top: 40px;
+      border-top: 2px solid #c86d44;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
+    }
 
     footer p {
       margin: 5px 0;
       font-size: 14px;
+      color: #a0a0a0;
     }
 
     footer a {
@@ -268,9 +288,9 @@
       transition: color 0.3s;
     }
 
-  footer a:hover {
-    color: #d4af37;
-  }
+    footer a:hover {
+      color: #c86d44;
+    }
 
     /* Animations */
     @keyframes fadeIn {
@@ -293,84 +313,83 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* 📱 Responsive */
+    @media (min-width: 769px) {
+      nav ul {
+        display: flex !important;
+      }
 
-
-  /* Mobile nav */
-  @media (min-width: 769px) {
-
-    nav ul {
-      display: flex !important;
+      .hamburger {
+        display: none !important;
+      }
     }
 
-    .hamburger {
-      display: none !important;
-    }
-  }
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
+      nav ul {
+        display: none !important;
+        flex-direction: column;
+        background: #fcfaf7;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 220px;
+        border-radius: 8px;
+        padding: 15px 0;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e8ded2;
+        z-index: 1000;
+      }
 
-    nav ul {
-      display: none !important;
-      flex-direction: column;
-      background: rgba(11, 13, 23, 0.95);
-      position: absolute;
-      top: 80px;
-      right: 20px;
-      width: 220px;
-      border-radius: 8px;
-      padding: 15px 0;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-      z-index: 1000;
+      nav ul.show {
+        display: flex !important;
+      }
+
+      .hamburger {
+        display: flex !important;
+      }
+
+      .logo img {
+        height: 50px;
+      }
+
+      .rooms-container {
+        padding: 20px;
+        gap: 15px;
+      }
+
+      .modal-content {
+        width: 95%;
+        padding: 15px;
+      }
     }
 
-    nav ul.show {
-      display: flex !important;
-    }
+    /* Constrain media height and prevent over-stretching */
+.room-card img,
+.room-card video {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
 
-    .hamburger {
-      display: flex !important;
-    }
+.room-card:hover img,
+.room-card:hover video {
+  transform: scale(1.05);
+}
 
-    .logo img {
-      height: 60px;
-    }
-
-    .rooms-container {
-      padding: 20px;
-      gap: 15px;
-    }
-
-    .modal-content {
-      width: 95%;
-      padding: 15px;
-    }
-  }
-
-    .logo img {
-      height: 60px; 
-      width: auto;
-      transition: transform 0.3s ease;
-      opacity: 0.9;
-    }
-    .logo img:hover { 
-      transform: scale(1.05); 
-      opacity: 1;
-    }
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-
-  }
-
-  .hamburger div {
-    width: 28px;
-    height: 3px;
-    background: #fff;
-    margin: 4px;
-    border-radius: 2px;
-  }
-  </style>
+/* Ensure room cards align uniformly */
+.room-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+</style>
 
   </head>
   <body>
@@ -378,7 +397,7 @@
     <header>
       <div class="nav-container">
         <div class="logo">
-    <img src="img/QHTZ5397.png" alt="Minista of Enjoyment Logo">
+    <img src="img/logo-removebg-preview.png" alt="Malyn Hotel and lounge Logo">
   </div>
         <nav>
           <ul id="nav-links">
@@ -400,57 +419,97 @@
     </header>
 
     <!-- Rooms Section -->
-    <div class="rooms-container">
-      <div class="room-card room" data-room="Room 901" data-aos="fade-up" data-aos-delay="100">
-        <img src="img/KWQB4969.JPG" alt="Room 901" />
-        <div class="room-info">
-          <h2>Room 901</h2>
-          <p>Spacious room with king-sized bed, air conditioning, high-speed Wi-Fi, and a TV, plus open access to our main hotel lounge.</p>
-          <p class="price">₦45,000 </p>
-          <button onclick="openBooking('Room 901')">Book Now</button>
-        </div>
-      </div>
+<div class="rooms-container">
 
-      <div class="room-card room" data-room="Room 902" data-aos="fade-up" data-aos-delay="200">
-        <img src="img/VOYZ5723.JPG" alt="Room 902" />
-        <div class="room-info">
-          <h2>Room 902</h2>
-          <p>Unwind in comfort featuring a king-sized bed, air conditioning, high-speed Wi-Fi, and a TV, plus open access to our main hotel lounge.</p>
-          <p class="price">₦45,000 </p>
-          <button onclick="openBooking('Room 902')">Book Now</button>
-        </div>
-      </div>
-
-      <div class="room-card room" data-room="Room 903" data-aos="fade-up" data-aos-delay="300">
-        <img src="https://picsum.photos/400/200?random=3" alt="Room 903" />
-        <div class="room-info">
-          <h2>Room 903</h2>
-          <p>Comfortable room with queen bed,air conditioning, desk, a TV, and complimentary Wi-Fi.</p>
-          <p class="price">₦30,000 </p>
-          <button onclick="openBooking('Room 903')">Book Now</button>
-        </div>
-      </div>
-
-      <div class="room-card room" data-room="Room 904" data-aos="fade-up" data-aos-delay="400">
-        <img src="https://picsum.photos/400/200?random=4" alt="Room 904" />
-        <div class="room-info">
-          <h2>Room 904</h2>
-          <p>large room with queen bed, desk, air conditioning, a TV, and complimentary Wi-Fi.</p>
-          <p class="price">₦30,000 </p>
-          <button onclick="openBooking('Room 904')">Book Now</button>
-        </div>
-      </div>
-
-      <div class="room-card room" data-room="Room 905" data-aos="fade-up" data-aos-delay="500">
-        <img src="https://picsum.photos/400/200?random=5" alt="Room 905" />
-        <div class="room-info">
-          <h2>Room 905</h2>
-          <p>Exclusive suite king-sized bed, desk, air conditioning, a TV, and complimentary Wi-Fi.</p>
-          <p class="price">₦40,000 </p>
-          <button onclick="openBooking('Room 905')">Book Now</button>
-        </div>
-      </div>
+  <div class="room-card room" data-room="Texas" data-aos="fade-up" data-aos-delay="100">
+    <img src="img/2.png" alt="Texas" />
+    <div class="room-info">
+      <h2>Texas</h2>
+      <p>Spacious room with king-sized bed, air conditioning, high-speed Wi-Fi, and a TV, plus open access to our main hotel lounge.</p>
+      <p class="price">₦35,000</p>
+      <button onclick="openBooking('Texas')">Book Now</button>
     </div>
+  </div>
+
+  <div class="room-card room" data-room="Las Vegas" data-aos="fade-up" data-aos-delay="200">
+    <img src="img/VOYZ5723.JPG" alt="Las Vegas" />
+    <div class="room-info">
+      <h2>Las Vegas</h2>
+      <p>Unwind in comfort featuring a king-sized bed, air conditioning, high-speed Wi-Fi, and a TV, plus open access to our main hotel lounge.</p>
+      <p class="price">₦45,000</p>
+      <button onclick="openBooking('Las Vegas')">Book Now</button>
+    </div>
+  </div>
+
+  <div class="room-card room" data-room="Alaska" data-aos="fade-up" data-aos-delay="300">
+  <video autoplay loop muted playsinline>
+    <source src="img/alaska.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="room-info">
+    <h2>Alaska</h2>
+    <p>Comfortable room with queen bed, air conditioning, desk, a TV, and complimentary Wi-Fi.</p>
+    <p class="price">₦45,000</p>
+    <button onclick="openBooking('Alaska')">Book Now</button>
+  </div>
+</div>
+
+  <div class="room-card room" data-room="Chicago" data-aos="fade-up" data-aos-delay="400">
+    <img src="https://picsum.photos/400/200?random=4" alt="Chicago" />
+    <div class="room-info">
+      <h2>Chicago</h2>
+      <p>Large room with queen bed, desk, air conditioning, a TV, and complimentary Wi-Fi.</p>
+      <p class="price">₦30,000</p>
+      <button onclick="openBooking('Chicago')">Book Now</button>
+    </div>
+  </div>
+
+  <div class="room-card room" data-room="Florida" data-aos="fade-up" data-aos-delay="500">
+    <img src="https://picsum.photos/400/200?random=5" alt="Florida" />
+    <div class="room-info">
+      <h2>Florida</h2>
+      <p>Exclusive suite with king-sized bed, desk, air conditioning, a TV, and complimentary Wi-Fi.</p>
+      <p class="price">₦38,000</p>
+      <button onclick="openBooking('Florida')">Book Now</button>
+    </div>
+  </div>
+
+  <div class="room-card room" data-room="Miami" data-aos="fade-up" data-aos-delay="600">
+  <!-- 1. Media: Video instead of img -->
+  <video autoplay loop muted playsinline>
+    <source src="img/als.mp4" type="video/mp4">
+  </video>
+
+  <!-- 2. Room details remain intact -->
+  <div class="room-info">
+    <h2>Miami</h2>
+    <p>Premium room with a comfortable king-sized bed, air conditioning, TV, desk, and complimentary Wi-Fi.</p>
+    <p class="price">₦35,000</p>
+    <button onclick="openBooking('Miami')">Book Now</button>
+  </div>
+</div>
+
+  <div class="room-card room" data-room="New York" data-aos="fade-up" data-aos-delay="700">
+    <img src="https://picsum.photos/400/200?random=7" alt="New York" />
+    <div class="room-info">
+      <h2>New York</h2>
+      <p>Elegant suite featuring a king-sized bed, air conditioning, TV, desk, and high-speed Wi-Fi.</p>
+      <p class="price">₦55,000</p>
+      <button onclick="openBooking('New York')">Book Now</button>
+    </div>
+  </div>
+
+  <div class="room-card room" data-room="California" data-aos="fade-up" data-aos-delay="800">
+    <img src="img/Luxury lounge photo.png" alt="California" />
+    <div class="room-info">
+      <h2>California</h2>
+      <p>Spacious and stylish room with a comfortable bed, air conditioning, TV, and complimentary Wi-Fi.</p>
+      <p class="price">₦35,000</p>
+      <button onclick="openBooking('California')">Book Now</button>
+    </div>
+  </div>
+
+</div>
 
     <!-- Booking Modal -->
    <div id="bookingModal" class="modal">
@@ -502,117 +561,148 @@
     </footer>
 
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 800, once: true });
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
 
-      const modal = document.getElementById("bookingModal");
-      const roomNameDisplay = document.getElementById("roomName");
-      const bookingMsg = document.getElementById("bookingMsg");
-      const bookingForm = document.getElementById("bookingForm");
-      let selectedRoom = "";
+  /* --- 1. Mobile Navigation & Close-on-Click --- */
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
 
-      function openBooking(room) {
-        selectedRoom = room;
-        roomNameDisplay.textContent = "Book " + room;
-        modal.style.display = "flex";
-        bookingMsg.textContent = "";
-      }
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.toggle("show");
+    hamburger.setAttribute("aria-expanded", isOpen);
+  });
 
-      function closeBooking() {
-        modal.style.display = "none";
+  document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove("show");
+      hamburger.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  /* --- 2. Booking Modal Logic --- */
+  const modal = document.getElementById("bookingModal");
+  const roomNameDisplay = document.getElementById("roomName");
+  const bookingMsg = document.getElementById("bookingMsg");
+  const bookingForm = document.getElementById("bookingForm");
+  const checkInInput = document.getElementById("checkIn");
+  const checkOutInput = document.getElementById("checkOut");
+  let selectedRoom = "";
+
+  function openBooking(room) {
+    selectedRoom = room;
+    roomNameDisplay.textContent = "Book " + room;
+    modal.style.display = "flex";
+    bookingMsg.textContent = "";
+  }
+
+  function closeBooking() {
+    modal.style.display = "none";
+    bookingForm.reset();
+  }
+
+  // Prevent check-out date from being set before check-in date
+  checkInInput.addEventListener("change", () => {
+    checkOutInput.min = checkInInput.value;
+    if (checkOutInput.value && checkOutInput.value < checkInInput.value) {
+      checkOutInput.value = checkInInput.value;
+    }
+  });
+
+  bookingForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    bookingMsg.textContent = "⏳ Sending...";
+    bookingMsg.style.color = "#1a1a1a";
+
+    const data = {
+      name: document.getElementById("guestName").value,
+      email: document.getElementById("guestEmail").value,
+      phone: document.getElementById("guestPhone").value,
+      checkIn: checkInInput.value,
+      checkOut: checkOutInput.value,
+      guests: document.getElementById("guests").value,
+      room: selectedRoom,
+    };
+
+    try {
+      const res = await fetch("https://malyn-hotel-api.onrender.com/book", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        bookingMsg.textContent = "✅ Booking request sent successfully!";
+        bookingMsg.style.color = "green";
         bookingForm.reset();
+        setTimeout(closeBooking, 2000);
+      } else {
+        bookingMsg.textContent = "❌ Could not send booking request.";
+        bookingMsg.style.color = "red";
       }
+    } catch (error) {
+      bookingMsg.textContent = "⚠ Server error. Try again later.";
+      bookingMsg.style.color = "red";
+    }
+  });
 
-      bookingForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        bookingMsg.textContent = "⏳ Sending...";
-        bookingMsg.style.color = "black";
+  window.onclick = (e) => {
+    if (e.target === modal) closeBooking();
+  };
 
-        const data = {
-          name: document.getElementById("guestName").value,
-          email: document.getElementById("guestEmail").value,
-          phone: document.getElementById("guestPhone").value,
-          checkIn: document.getElementById("checkIn").value,
-          checkOut: document.getElementById("checkOut").value,
-          guests: document.getElementById("guests").value,
-          room: selectedRoom,
-        };
+  /* --- 3. Auto-Check Availability for All 8 Rooms --- */
+  async function updateRoomAvailability() {
+    try {
+      const res = await fetch("https://malyn-hotel-api.onrender.com/api/rooms/status");
+      const data = await res.json();
+      if (!data.success) return;
 
-        try {
-          const res = await fetch("https://hotel-booking-oujg.onrender.com/book", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
-          });
-
-          const result = await res.json();
-
-          if (result.success) {
-            bookingMsg.textContent = "✅ Booking request sent successfully!";
-            bookingMsg.style.color = "green";
-            bookingForm.reset();
-            setTimeout(closeBooking, 2000);
-          } else {
-            bookingMsg.textContent = "❌ Could not send booking request.";
-            bookingMsg.style.color = "red";
-          }
-        } catch (error) {
-          bookingMsg.textContent = "⚠ Server error. Try again later.";
-          bookingMsg.style.color = "red";
+      const bookedRooms = {};
+      data.rooms.forEach((r) => {
+        if (r.status === "booked") {
+          bookedRooms[r.name.trim().toLowerCase()] = true;
         }
       });
 
-      window.onclick = (e) => {
-        if (e.target === modal) closeBooking();
-      };
+      // Automatically checks every room card present on the page
+      document.querySelectorAll(".room").forEach((roomDiv) => {
+        const roomName = roomDiv.getAttribute("data-room").trim().toLowerCase();
+        const btn = roomDiv.querySelector("button");
 
-      async function updateRoomAvailability() {
-        try {
-          const res = await fetch("https://hotel-booking-oujg.onrender.com/api/rooms/status");
-          const data = await res.json();
-          if (!data.success) return;
-
-          const bookedRooms = {};
-          data.rooms.forEach((r) => {
-            if (r.status === "booked") {
-              bookedRooms[r.name.trim().toLowerCase()] = true;
-            }
-          });
-
-          document.querySelectorAll(".room").forEach((roomDiv) => {
-            const roomName = roomDiv.getAttribute("data-room").trim().toLowerCase();
-            const btn = roomDiv.querySelector("button");
-
-            if (bookedRooms[roomName]) {
-              btn.disabled = true;
-              btn.textContent = "Booked";
-              btn.style.background = "#999";
-              btn.style.cursor = "not-allowed";
-              roomDiv.style.opacity = "0.7";
-            } else {
-              btn.disabled = false;
-              btn.textContent = "Book Now";
-              btn.style.background = "#d4af37";
-              btn.style.color = "#0b0d17";
-              btn.style.cursor = "pointer";
-              roomDiv.style.opacity = "1";
-            }
-          });
-        } catch (err) {
-          console.error("Error fetching room status:", err);
+        if (bookedRooms[roomName]) {
+          btn.disabled = true;
+          btn.textContent = "Booked";
+          btn.style.background = "#999999";
+          btn.style.cursor = "not-allowed";
+          roomDiv.style.opacity = "0.7";
+        } else {
+          btn.disabled = false;
+          btn.textContent = "Book Now";
+          btn.style.background = "#c86d44";
+          btn.style.color = "#ffffff";
+          btn.style.cursor = "pointer";
+          roomDiv.style.opacity = "1";
         }
-      }
+      });
+    } catch (err) {
+      console.error("Error fetching room status:", err);
+    }
+  }
 
-      updateRoomAvailability();
-      setInterval(updateRoomAvailability, 30000);
-      const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
-   
-  hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-  });
-    </script>
+  updateRoomAvailability();
+  setInterval(updateRoomAvailability, 30000);
+</script>
   </body>
   </html>
 
