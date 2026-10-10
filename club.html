@@ -456,8 +456,7 @@
       </div>
     </div>
   </footer>
-
-  <script>
+<script>
   /* --- 1. Form Submission Handler --- */
   const clubForm = document.getElementById("clubForm");
 
@@ -484,7 +483,7 @@
     };
 
     try {
-      const res = await fetch("https://hotel-booking-oujg.onrender.com/club", {
+      const res = await fetch("https://malyn-hotel-api.onrender.com/club", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
